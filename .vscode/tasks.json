@@ -2,11 +2,32 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "npm: start",
-      "type": "npm",
-      "script": "start",
+      "label": "ng serve",
+      "type": "shell",
+      "command": "npm start",
       "isBackground": true,
-      "problemMatcher": "$tsc-watch"
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": [
+          {
+            "regexp": ".*",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Starting development server.*",
+          "endsPattern": ".*Compiled successfully.*"
+        },
+      },
+      "presentation": {
+        "reveal": "never"
+      },
+      "runOptions": {
+        "runOn": "default"
+      }
     }
   ]
 }

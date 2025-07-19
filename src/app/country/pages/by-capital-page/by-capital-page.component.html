@@ -1,4 +1,6 @@
 <section class="space-y-2 h-full">
-  <country-search placeholder="Buscar por capital" (search)="search($event)"></country-search>
-  <country-table></country-table>
+  <country-search placeholder="Buscar por capital" (search)="query.set($event)"></country-search>
+  <section class="my-3.5">
+    <country-table [countries]="countryResource.value()" [error]="countryResource.error()" [loading]="countryResource.isLoading()"></country-table>
+  </section>
 </section>

@@ -1,20 +1,62 @@
-<table class="table table-md mt-2 w-full overflow-x-auto flex-grow overflow-y-auto">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Icono</th>
-      <th>Bandera</th>
-      <th>Capital</th>
-      <th>Poblacion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </tbody>
-</table>
+<section class="card card-xs border border-gray-500 dark:border-b-gray-400">
+  <div class="card-body">
+    <table class="table table-md w-full overflow-x-auto flex-grow overflow-y-auto">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Icono</th>
+          <th>Bandera</th>
+          <th>Nombre</th>
+          <th>Capital</th>
+          <th>Poblacion</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (country of countries(); track country.cca2; let index = $index) {
+          <tr>
+            <td>{{ index + 1 }}</td>
+            <td>{{ country.flagSvg }}</td>
+            <td><img [src]="country.flag" alt="Flag of {{ country.name }}" class="w-10 h-6"></td>
+            <td>{{ country.name }}</td>
+            <td>{{ country.capital }}</td>
+            <td>
+              <span class="badge badge-secondary">
+                {{ country.population | number }}
+              </span>
+            </td>
+            <td><a [routerLink]="['/country/by', country.cca2]" class="link-primary">Ver Detalles</a></td>
+          </tr>
+        }
+        @empty {
+          @if (error()) {
+            <tr>
+              <td colspan="7">
+                <div class="alert alert-error alert-soft mt-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{{error()}}</span>
+                </div>
+              </td>
+            </tr>
+          }
+
+          @if (loading()) {
+            <tr>
+              <td colspan="7">
+                <loading-alert></loading-alert>
+              </td>
+            </tr>
+          }
+
+          @if (!loading() && !error() && countries().length === 0) {
+            <tr>
+              <td colspan="7" class="text-center">No se encontraron países.</td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

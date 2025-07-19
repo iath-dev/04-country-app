@@ -1,0 +1,45 @@
+<div class="stats shadow">
+  <country-info-stat [title]="country().cca2" [value]="country().name">
+    <div class="w-16">
+      <a [href]="country().maps.googleMaps" target="_blank">
+        <img class="mask mask-squircle" [src]="country().flagSvg" />
+      </a>
+    </div>
+  </country-info-stat>
+
+  <country-info-stat title="Capital" [value]="country().capital">
+    <a
+      [href]="country().maps.googleMaps"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"
+        />
+      </svg>
+    </a>
+  </country-info-stat>
+
+  <country-info-stat
+    title="Poblacion"
+    [value]="country().population | number"
+  ></country-info-stat>
+
+  <clock-stat [timezone]="country().timezones[0]"></clock-stat>
+
+  <country-info-stat
+    title="Moneda"
+    [value]="country().currency"
+  ></country-info-stat>
+</div>
+
+<div class="flex-grow py-4">
+  <country-image-diff [image]="country().flagSvg"></country-image-diff>
+</div>

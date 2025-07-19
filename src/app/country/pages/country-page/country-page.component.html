@@ -1,1 +1,7 @@
-<h1>{{code()}}</h1>
+@if (countryResource.error()) {
+<error-alert></error-alert>
+} @if (countryResource.isLoading()) {
+<loading-alert></loading-alert>
+} @if (countryResource.hasValue()) {
+<country-information [country]="countryResource.value()!"></country-information>
+}
