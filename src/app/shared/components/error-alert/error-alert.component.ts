@@ -10,5 +10,5 @@ export class ErrorAlertComponent {
 
   goBack = () => {
     this.location.back();
-  }
+  };
 }

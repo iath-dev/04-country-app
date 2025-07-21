@@ -7,4 +7,4 @@ import { TopMenuComponent } from '../../components/top-menu/top-menu.component';
   imports: [RouterOutlet, TopMenuComponent],
   templateUrl: './country-layout.component.html',
 })
-export class CountryLayoutComponent { }
+export class CountryLayoutComponent {}

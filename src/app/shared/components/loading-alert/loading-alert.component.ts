@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
       <span class="loading loading-spinner loading-xs"></span>
       <span>Loading....</span>
     </div>
-  `
+  `,
 })
-export class LoadingAlertComponent { }
+export class LoadingAlertComponent {}
