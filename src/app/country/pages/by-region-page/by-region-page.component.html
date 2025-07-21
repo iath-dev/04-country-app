@@ -1,8 +1,19 @@
-<section class="py-3.5">
-  <div class="join mb-3.5">
+<section>
+  <select
+    class="select md:hidden select-primary mb-2.5"
+    #regionSelect
+    (change)="selectRegion(regionSelect.value)"
+  >
+    @for(region of regions; track $index) {
+    <option (click)="selectedRegion.set(region)">
+      {{ region }}
+    </option>
+    }
+  </select>
+  <div class="join mb-3.5 max-md:hidden">
     @for(region of regions; track $index) {
     <button
-      class="btn btn-secondary join-item"
+      class="btn btn-secondary btn-md join-item"
       [class.btn-outline]="region !== selectedRegion()"
       (click)="selectedRegion.set(region)"
     >
