@@ -1,1 +1,18 @@
-<country-table></country-table>
+<section class="py-3.5">
+  <div class="join mb-3.5">
+    @for(region of regions; track $index) {
+    <button
+      class="btn btn-secondary join-item"
+      [class.btn-outline]="region !== selectedRegion()"
+      (click)="selectedRegion.set(region)"
+    >
+      {{ region }}
+    </button>
+    }
+  </div>
+  <country-table
+    [countries]="regionsResource.value()"
+    [loading]="regionsResource.isLoading()"
+    [error]="regionsResource.error()"
+  ></country-table>
+</section>
