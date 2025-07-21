@@ -31,4 +31,8 @@ export class ByRegionPageComponent {
       return this.countryService.searchByRegion(request.region);
     },
   });
+
+  public selectRegion(region: string) {
+    this.selectedRegion.set((region as Region) ?? '');
+  }
 }
