@@ -5,12 +5,3 @@ export type Region =
   | 'Europe'
   | 'Oceania'
   | 'Antarctic';
-
-// public regions: Region[] = [
-//   'Africa',
-//   'Americas',
-//   'Asia',
-//   'Europe',
-//   'Oceania',
-//   'Antarctic',
-// ];

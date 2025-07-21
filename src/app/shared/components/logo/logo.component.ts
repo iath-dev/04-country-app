@@ -17,4 +17,4 @@ import { Component } from '@angular/core';
     </svg>
   `,
 })
-export class LogoComponent { }
+export class LogoComponent {}
