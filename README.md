@@ -1,59 +1,43 @@
 # CountryApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+<!-- Aquí puedes colocar tu logo -->
 
-## Development server
+![Logo](src/app/shared/components/logo/logo.svg)
 
-To start a local development server, run:
+## Descripción
+
+CountryApp es una aplicación web desarrollada con Angular que permite buscar información sobre países, regiones y capitales. Incluye funcionalidades como búsqueda, visualización de datos, estadísticas y más. El objetivo principal es ofrecer una experiencia interactiva y educativa sobre datos geográficos y demográficos.
+
+## Librerías utilizadas
+
+Este proyecto utiliza las siguientes librerías principales:
+
+- **Angular**: Framework principal para la construcción de la aplicación.
+- **RxJS**: Para la gestión de programación reactiva y manejo de datos asíncronos.
+- **TailwindCSS**: Para estilos y diseño responsivo.
+- **Netlify**: Para el despliegue automático y hosting.
+
+Otras dependencias pueden encontrarse en el archivo `package.json`.
+
+## Despliegue
+
+La aplicación está desplegada en Netlify:
+
+- **URL de producción:** [Pagina de Produccion](https://country-angularapp.netlify.app/)
+
+### Estado de despliegue
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0c4d270a-60cb-474a-8e44-f64625380d5a/deploy-status)](https://app.netlify.com/projects/country-angularapp/deploys)
+
+---
+
+## ¿Cómo ejecutar el proyecto?
+
+Para iniciar el servidor de desarrollo local, ejecuta:
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Luego abre tu navegador en `http://localhost:4200/`.
